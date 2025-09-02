@@ -13,7 +13,7 @@ def book_list(request):
     return render(request, 'base.html', {'book_list': book_list}, 'form': form)
 
 @require_http_methods(['POST'])
-def book_list(request):
+def create_book(request):
     form = BookCreateForm(request.POST)
     if form.is_valid():
         book = form.save()
